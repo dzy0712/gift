@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/css.css">
+       
+</head>
+<body>
+    <div id="box">
+        <div id="close"></div>
+        <ul>
+            <li><dl>
+                <dt><img src="images/gift0.jpg" ></dt>
+                <dd>一等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift1.jpg" ></dt>
+                <dd>二等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift2.jpg" ></dt>
+                <dd>三等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift3.jpg" ></dt>
+                <dd>四等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift4.jpg" ></dt>
+                <dd>五等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift5.jpg" ></dt>
+                <dd>六等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift6.jpg" ></dt>
+                <dd>七等奖</dd>
+            </dl></li>
+            <li><dl>
+                <dt><img src="images/gift7.jpg" ></dt>
+                <dd>八等奖</dd>
+            </dl></li>
+            <li class="nine"><dl class="mid">
+                <dt id="btn"><img src="images/gift8.jpg" id="pic"></dt>
+                <dd>按钮</dd>
+            </dl></li>                                                     
+        </ul>
+    </div>
+    <script>
+        var oLi=document.getElementsByTagName("li");
+        var oBtn=document.getElementById("btn");
+        var oPic=document.getElementById("pic");
+        var num=0; var i=0; var t=0;
+
+      oBtn.onclick=function(){
+          oPic.style.transform="scale(0.6)";
+          oPic.style.transition="1s";
+          
+          view();//视图
+      }
+
+      function view(){
+        num=parseInt(Math.random()*10+20);
+    console.log('固定次数:'+num);
+        if(i<num){
+            i++;
+            setTimeout(view,200);
+            console.log('动态'+i);
+        }else{
+            i=0;
+            oPic.style.transform="scale(0.8)";
+            oPic.style.transition="1s";
+        }
+
+        if(t<oLi.length-1){
+            for(var j=0;j<oLi.length-1;j++){
+                oLi[j].style.border="2px solid #000";
+                oLi[j].style.background="#fff";
+            }
+            oLi[t].style.border="2px solid #f00";
+            oLi[t].style.background="rgba(255,0,0,0.4)";
+            t++;
+
+        }else{
+            t=0;
+        }
+      }
+    </script>
+</body>
+</html>
