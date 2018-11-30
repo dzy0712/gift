@@ -1,4 +1,6 @@
-{
+  { "control": {
+    "expires": 36
+  },
     "books": [
       {
         "src": "/static/img/pic1.jpg",
